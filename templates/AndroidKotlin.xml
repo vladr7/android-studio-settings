@@ -1,0 +1,53 @@
+<templateSet group="AndroidKotlin">
+  <template name="livedata" value="private val _$name$ = $type$&lt;$type2$&gt;()&#10;val $name$ : LiveData&lt;$type2$&gt; = _$name$" description="livedata" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="type" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="type2" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_CLASS" value="true" />
+      <option name="KOTLIN_OBJECT_DECLARATION" value="true" />
+      <option name="KOTLIN_TOPLEVEL" value="true" />
+    </context>
+  </template>
+  <template name="observer" value="private val $name$ = Observer&lt;$type$&gt; {&#10;&#10;}" description="observer" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="type" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_CLASS" value="true" />
+    </context>
+  </template>
+  <template name="connectObserver" value="$viewModel$.$name$.observe(this, $name$)" description="connectObserver" toReformat="false" toShortenFQNames="true">
+    <variable name="viewModel" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="disconnectObserver" value="$viewModel$.$name$.removeObserver($name$)" description="disconnectObserver" toReformat="false" toShortenFQNames="true">
+    <variable name="viewModel" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="newInstanceBundle" value="companion object {&#10;    const val TAG: String = &quot;$fragmentClassName$Tag&quot;&#10;    fun newInstance(bundle: Bundle = Bundle()): $fragmentClassName$ = &#10;        $fragmentClassName$().apply{&#10;            arguments = bundle&#10;        }&#10;}" description="bundle by Ionut" toReformat="false" toShortenFQNames="true">
+    <variable name="fragmentClassName" expression="kotlinClassName()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="KOTLIN_CLASS" value="true" />
+    </context>
+  </template>
+  <template name="stateflow" value="private val _$name$ = MutableStateFlow($type1$)&#10;val $name$ = _$name$.asStateFlow()" description="stateflow template" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="type1" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_CLASS" value="true" />
+    </context>
+  </template>
+  <template name="sharedflow" value="private val _$name$ = MutableSharedFlow&lt;$type1$&gt;()&#10;val $name$ = _$name$.asSharedFlow()" description="sharedflow template" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="type1" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_CLASS" value="true" />
+    </context>
+  </template>
+</templateSet>
